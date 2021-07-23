@@ -9,5 +9,5 @@ edition = "2018"
 bevy = "*"
 bevy_rapier2d = "*"
 
-[profile.dev.package.bevy_rapier3d]
+[profile.dev.package.bevy_rapier2d]
 opt-level = 3
