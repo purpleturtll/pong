@@ -1,0 +1,13 @@
+[package]
+name = "pong"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "*"
+bevy_rapier2d = "*"
+
+[profile.dev.package.bevy_rapier3d]
+opt-level = 3
