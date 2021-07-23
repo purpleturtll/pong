@@ -1,5 +1,3 @@
-use std::f32::consts::PI;
-
 use bevy::prelude::*;
 use bevy_rapier2d::{na::Isometry2, prelude::*};
 
@@ -7,7 +5,11 @@ struct Ball;
 
 fn main() {
     App::build()
-        .insert_resource(WindowDescriptor::default())
+        .insert_resource(WindowDescriptor{
+            height: 400.0,
+            width:800.0,
+            ..Default::default()
+        })
         .add_plugins(DefaultPlugins)
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::default())
         .add_plugin(RapierRenderPlugin)
@@ -19,7 +21,6 @@ fn main() {
 fn ball_setup(
     mut commands: Commands,
     asset_server: Res<AssetServer>,
-    win_desc: Res<WindowDescriptor>,
     mut materials: ResMut<Assets<ColorMaterial>>,
 ) {
     let texture_handle = asset_server.load("ball.png");
